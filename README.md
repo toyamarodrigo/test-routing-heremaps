@@ -1,20 +1,13 @@
 
-# ViteJS - ChakraUI - Redux - Typescript
-
-Simple starting template
-
+# Test Routing HERE maps
 ## How to start
 
 ```sh
-> git clone https://github.com/toyamarodrigo/vite-chakra-redux-tsc.git
+> git clone https://github.com/toyamarodrigo/test-routing-heremaps.git
 
-> cd vite-chakra-redux-tsc
+> cd test-routing-heremaps
 
 > yarn
 
 > yarn dev
 ```
-
-## Screenshot
-
-![Example](https://i.imgur.com/EP4R0aS.png)
