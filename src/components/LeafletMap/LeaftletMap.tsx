@@ -8,8 +8,9 @@ import {
   ZoomControl,
   Tooltip,
   Polyline,
+  useMap,
 } from "react-leaflet";
-import L from "leaflet";
+import Tangram from "tangram";
 
 import { decode } from "../../utils/flexible-polyline";
 
@@ -107,7 +108,26 @@ export const LeafletMap = () => {
         <Polyline pathOptions={{ color: "lime" }} positions={startPolylineArr} />
         <Polyline pathOptions={{ color: "red" }} positions={destinationPolylineArr} />
         <Polyline pathOptions={{ color: "blue" }} positions={waypointsPolylineArr} />
+        <MyMap />
       </MapContainer>
     </>
   );
+};
+
+const MyMap = () => {
+  const map = useMap();
+
+  useEffect(() => {
+    let layer = Tangram.leafletLayer({
+      scene: "/tilezen.yaml",
+    });
+
+    layer.addTo(map);
+
+    return (): void => {
+      map.removeLayer(layer);
+    };
+  }, []);
+
+  return null;
 };
